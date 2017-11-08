@@ -492,6 +492,20 @@ directory:
 tar --one-top-level=$HOME/freetype --strip-components=1 -xzf freetype-2.5.3.tar.gz
 ```
 
+### Fontconfig
+
+[Fontconfig](https://www.freedesktop.org/wiki/Software/fontconfig/) header files
+are required on all platforms, except Windows. Often these files are provided by
+your operating system.
+
+  * To install on an apt-based Linux, try running `sudo apt-get install
+    libfontconfig1-dev`.
+  * To install on an rpm-based Linux, try running `sudo yum install
+    fontconfig-devel`.
+
+Use `--with-fontconfig=<path>` if `configure` does not properly locate your
+Fontconfig files.
+
 ### CUPS
 
 CUPS, [Common UNIX Printing System](http://www.cups.org) header files are

@@ -51,6 +51,7 @@
 </ul></li>
 <li><a href="#external-library-requirements">External Library Requirements</a><ul>
 <li><a href="#freetype">FreeType</a></li>
+<li><a href="#fontconfig">Fontconfig</a></li>
 <li><a href="#cups">CUPS</a></li>
 <li><a href="#x11">X11</a></li>
 <li><a href="#alsa">ALSA</a></li>
@@ -394,6 +395,13 @@ tar -xzf freetype-2.5.3.tar.gz</code></pre>
 <p>Then run <code>configure</code> with <code>--with-freetype-src=&lt;freetype_src&gt;</code>. This will automatically build the freetype library into <code>&lt;freetype_src&gt;/lib64</code> for 64-bit builds or into <code>&lt;freetype_src&gt;/lib32</code> for 32-bit builds. Afterwards you can always use <code>--with-freetype-include=&lt;freetype_src&gt;/include</code> and <code>--with-freetype-lib=&lt;freetype_src&gt;/lib[32|64]</code> for other builds.</p>
 <p>Alternatively you can unpack the sources like this to use the default directory:</p>
 <pre><code>tar --one-top-level=$HOME/freetype --strip-components=1 -xzf freetype-2.5.3.tar.gz</code></pre>
+<h3 id="fontconfig">Fontconfig</h3>
+<p><a href="https://www.freedesktop.org/wiki/Software/fontconfig/">Fontconfig</a> header files are required on all platforms, except Windows. Often these files are provided by your operating system.</p>
+<ul>
+<li>To install on an apt-based Linux, try running <code>sudo apt-get install libfontconfig1-dev</code>.</li>
+<li>To install on an rpm-based Linux, try running <code>sudo yum install fontconfig-devel</code>.</li>
+</ul>
+<p>Use <code>--with-fontconfig=&lt;path&gt;</code> if <code>configure</code> does not properly locate your Fontconfig files.</p>
 <h3 id="cups">CUPS</h3>
 <p>CUPS, <a href="http://www.cups.org">Common UNIX Printing System</a> header files are required on all platforms, except Windows. Often these files are provided by your operating system.</p>
 <ul>
